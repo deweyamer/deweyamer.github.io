@@ -1,3 +1,12 @@
+---
+draft: false 
+date: 2024-01-31 
+readtime: 10
+authors:
+  - Dewey
+categories:
+  - RAG
+---
 # 漫谈GPT&RAG
 
 ## ChatGPT漫谈
@@ -10,6 +19,8 @@
 2. SFT。针对特定任务，特定领域，对大模型微调。
 
 虽然大模型的能力十分惊艳，但是它也有一些问题亟待解决。首先是大模型生成的结果并不置信（幻觉Hallucination），其次，如果没有对齐人类价值观（Alignment），大模型会生成一些有害的回答，然后是安全问题：比如大模型如何避免被劫持，生成有害的回答，以及生成数据的版权问题。
+
+<!-- more -->
 
 ### Hallucination
 
