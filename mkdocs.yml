@@ -59,6 +59,7 @@ plugins:
   - tags # 标签功能插件
   - blog: # 博客功能插件
       blog_toc: true
+      blog_dir: writing
 
   - search: # 搜索插件
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
