@@ -558,6 +558,7 @@ Received: Hello from client!
 <figcaption>IO密集 AsyncIO版本</figcaption>
 </figure>
 
+## Summary
 
 | 特点 | 线程并行 | 进程并行 | Asyncio |
 | --- | --- | --- | --- |
