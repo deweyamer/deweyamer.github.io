@@ -1,1 +1,1 @@
-Yeah, new blod decorating! 
+Yeah, new blog decorating! 
