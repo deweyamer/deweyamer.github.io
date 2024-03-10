@@ -72,7 +72,7 @@ markdown_extensions: # markdown extensions
   - attr_list
   - def_list
   - footnotes
-  - mdx_include
+  - md_in_html
   - toc:
       permalink: true
   - pymdownx.arithmatex:
