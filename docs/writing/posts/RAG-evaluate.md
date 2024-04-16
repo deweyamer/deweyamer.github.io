@@ -44,17 +44,11 @@ MDD is a product development approach that relies on data to make well-informed 
 - **Component-Wise Evaluation**
     - **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
     
-    | Steps | Examples |
-    | --- | --- |
-    | Step1: Break the generated answer into individual statements. | Statements:
-    
-    Statement 1: “Einstein was born in Germany.”
-    
-    Statement 2: “Einstein was born on 20th March 1879.” |
-    | Step2: For each of the generated statements, verify if it can be inferred from the given context. | Statement 1: Yes
-    
-    Statement 2: No |
-    | Step3: Use the formula depicted above to calculate faithfulness. | Faithfulness = 1/2 = 0.5 |
+    | Steps | Examples                                                                                                    |
+    | --- |-------------------------------------------------------------------------------------------------------------|
+    | Step1: Break the generated answer into individual statements. | Statements:Statement 1: “Einstein was born in Germany.”Statement 2: “Einstein was born on 20th March 1879.” |
+    | Step2: For each of the generated statements, verify if it can be inferred from the given context. | Statement 1: Yes;Statement 2: No                                                                            |
+    | Step3: Use the formula depicted above to calculate faithfulness. | Faithfulness = 1/2 = 0.5                                                                                    |
     - **[Answer relevancy](https://docs.ragas.io/en/stable/concepts/metrics/answer_relevance.html)**
     
     | Step1: Reverse-engineer ‘n’ of the question from the generated answer using a LLM. For instance, for the first answer, the LLM might generate the following possible questions: | Question 1: “In which part of Europe is France located?”
@@ -79,11 +73,10 @@ MDD is a product development approach that relies on data to make well-informed 
     | Step3: Use the formula depicted above to calculate context recall. | context recall = 1/2 = 0.5 |
     - **[Context precision](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)**
     
-    | Step1: For each chunk in retrieval context, check if it is relevant or not relevant to arrive at the ground truth for the given question. |  |
-    | --- | --- |
-    | Step2: calculate precisionTOP@K for each chunk in the context | precision@1 = 0/1 = 0
-    precision@2 = 1/2 = 0.5 |
-    | Step3: calculate the mean of precisionTOP@K to arrive at the final context precision score. | context precision = (0+0.5)/1 = 0.5 |
+    | Step1: For each chunk in retrieval context, check if it is relevant or not relevant to arrive at the ground truth for the given question. |                                               |
+    | --- |-----------------------------------------------|
+    | Step2: calculate precisionTOP@K for each chunk in the context | precision@1 = 0/1 = 0;precision@2 = 1/2 = 0.5 |
+    | Step3: calculate the mean of precisionTOP@K to arrive at the final context precision score. | context precision = (0+0.5)/1 = 0.5           |
     - **[Context relevancy](https://docs.ragas.io/en/stable/concepts/metrics/context_relevancy.html)**
     
     $$
