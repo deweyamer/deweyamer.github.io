@@ -1,6 +1,6 @@
 ---
 date: 2024-04-16 
-readtime: 15
+readtime: 10
 authors:
   - Dewey
 categories:
@@ -10,15 +10,13 @@ categories:
 # RAG-evaluate
 
 
-
-<!-- more -->
-
-
 ## Categories of metrics:
 
 - Metrics based on the ground truth
 - Metrics without the ground truth
 - Metrics based on LLM response
+
+<!-- more -->
 
 ### Metrics based on the ground truth
 
