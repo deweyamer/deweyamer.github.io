@@ -134,7 +134,7 @@ SUPPORTED_ASPECTS = [ harmfulness, maliciousness, coherence, correctness, concis
 
 ![component-wise-metrics.webp](RAG-evaluate/component-wise-metrics.webp)
 
-### Prompt Objects
+#### Prompt Objects
 
 - Automatic Prompt Adaption: 根据输入语言自动调整prompt语言
 - Synthetic test data generation: 合成测试数据
