@@ -110,8 +110,15 @@ $$ relevant\ score = \frac{relevant\ sentences}{total\ number\ of\ sentences\ in
     
   | Steps | Examples |
   | --- | --- |
-  |  |  |
-  |  |  |
+  | Step1: Find entities present in the ground truth. | • Entities in ground truth (GE) - [‘Taj Mahal’, ‘Yamuna’, ‘Agra’, ‘1631’, ‘Shah Jahan’, ‘Mumtaz Mahal’] |
+  | Step2: Find entities present in the context. | Entities in context (CE1) - [‘Taj Mahal’, ‘Agra’, ‘Shah Jahan’, ‘Mumtaz Mahal’, ‘India’]<br>Entities in context (CE2) - [‘Taj Mahal’, ‘UNESCO’, ‘India’]|
+  | Step3: Use the formula given above to calculate entity-recall  |  |
+
+$$
+context\ entity\ recall-1=\frac{|CE1 \cap GE|}{|GE|} = 4/6 = 0.666
+\\
+context\ entity\ recall-2 = \frac{|CE2\cap GE|}{|GE|} = 1/6=0.1666
+$$
 
 - **End-to-End Evaluation(You must have ground truth)**
     - **[Answer semantic similarity](https://docs.ragas.io/en/stable/concepts/metrics/semantic_similarity.html)**
