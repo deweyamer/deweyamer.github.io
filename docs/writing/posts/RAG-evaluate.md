@@ -116,7 +116,10 @@ $$ relevant\ score = \frac{relevant\ sentences}{total\ number\ of\ sentences\ in
 
 $$
 context\ entity\ recall-1=\frac{|CE1 \cap GE|}{|GE|} = 4/6 = 0.666
-\\
+$$
+
+
+$$
 context\ entity\ recall-2 = \frac{|CE2\cap GE|}{|GE|} = 1/6=0.1666
 $$
 
