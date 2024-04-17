@@ -135,3 +135,20 @@ Last, our response still needs to helpfully answer the original question. We can
 #### Put it together
 
 By reaching satisfactory evaluations for this triad, we can make a nuanced statement about our application’s correctness; our application is verified to be hallucination free up to the limit of its knowledge base. In other words, if the vector database contains only accurate information, then the answers provided by the RAG are also accurate.
+
+
+## Arize-AI Phoenix
+
+Phoenix is an open-source observability library designed for experimentation, evaluation, and troubleshooting. It allows AI Engineers and Data Scientists to quickly visualize their data, evaluate performance, track down issues, and export data to improve.
+
+
+### Tracing and eval
+
+![Untitled](RAG-evaluate/Untitled.png)
+
+## Reference
+
+1. https://zilliz.com/blog/how-to-evaluate-retrieval-augmented-generation-rag-applications
+2. https://techcommunity.microsoft.com/t5/microsoft-developer-community/evaluating-rag-applications-with-azureml-model-evaluation/ba-p/4108603
+3. [https://www.rungalileo.io/blog/mastering-rag-llm-prompting-techniques-for-reducing-hallucinations#expertprompting](https://www.rungalileo.io/blog/mastering-rag-llm-prompting-techniques-for-reducing-hallucinations#expertprompting)
+4. https://huggingface.co/learn/cookbook/rag_evaluation
