@@ -104,8 +104,8 @@ MDD is a product development approach that relies on data to make well-informed 
   
    - **[Context relevancy](https://docs.ragas.io/en/stable/concepts/metrics/context_relevancy.html)**
     
-  $$ relevant \ score = \frac{relevant \ sentences}{total \ number  \ of sentences \ in \ retrieved context} $$
-    
+$$ relevant\ score = \frac{relevant\ sentences}{total\ number\ of\ sentences\ in\ retrieved\ context} $$
+
   - **[Context entity recall](https://docs.ragas.io/en/stable/concepts/metrics/context_entities_recall.html)**
     
   | Steps | Examples |
