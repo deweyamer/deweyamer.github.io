@@ -69,8 +69,7 @@ MDD is a product development approach that relies on data to make well-informed 
 - Monitoring: It allows you to gain valuable and actionable insights from production data points, facilitating the continuous improvement of the quality of your LLM application.
 
 #### Metrics
-
-- **Component-Wise Evaluation**
+##### Component-Wise Evaluation
     - **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
     
     | Steps | Examples                                                                                                        |
@@ -123,7 +122,7 @@ $$
 context\ entity\ recall-2 = \frac{|CE2\cap GE|}{|GE|} = 1/6=0.1666
 $$
 
-- **End-to-End Evaluation(You must have ground truth)**
+##### End-to-End Evaluation(You must have ground truth)
     - **[Answer semantic similarity](https://docs.ragas.io/en/stable/concepts/metrics/semantic_similarity.html)**
     
     **Step 1:** Vectorize the ground truth answer using the specified embedding model.
