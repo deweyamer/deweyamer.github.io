@@ -9,30 +9,57 @@ categories:
 
 # RAG-evaluate
 
-Tags: RAG
 
-RAG-evaluate
-
-https://zilliz.com/blog/how-to-evaluate-retrieval-augmented-generation-rag-applications
-
-https://techcommunity.microsoft.com/t5/microsoft-developer-community/evaluating-rag-applications-with-azureml-model-evaluation/ba-p/4108603
-
-[https://www.rungalileo.io/blog/mastering-rag-llm-prompting-techniques-for-reducing-hallucinations#expertprompting](https://www.rungalileo.io/blog/mastering-rag-llm-prompting-techniques-for-reducing-hallucinations#expertprompting)
-
-https://huggingface.co/learn/cookbook/rag_evaluation
 
 <!-- more -->
 
-## Ragas
 
-### Core Concepts
+## Categories of metrics:
+
+- Metrics based on the ground truth
+- Metrics without the ground truth
+- Metrics based on LLM response
+
+### Metrics based on the ground truth
+
+**ground truth V.S. generated answer**
+
+- answer semantic similarity
+- answer correctness
+
+**ground truth V.S. relevant documents**
+
+- exact match
+- Rouge-L
+- F1
+
+### Metrics without the ground truth
+
+**Query V.S. relevant documents V.S. generated answer**
+
+- **Context relevance**: Measures how well the retrieved context supports the query.
+- **Groundedness**: Assesses the extent to which the LLM's response aligns with the retrieved context.
+- **Answer Relevance**: Gauges the relevance of the final response to the query.
+
+### Metrics based on LLM response
+
+harmfulness, maliciousness, coherence, correctness, conciseness
+
+[Langchain Critique](https://python.langchain.com/docs/guides/productionization/evaluation/string/criteria_eval_chain/#custom-criteria)
+
+
+## RAG evaluate tools
+
+### Ragas
+
+#### Core Concepts
 
 1. Synthetically generate a diverse test dataset that you can use to evaluate your app.
 2. Use LLM-assisted evaluation metrics designed to help you objectively measure the performance of your application.
 3. Monitor the quality of your apps in production using smaller, cheaper models that can give actionable insights. For example, the number of hallucinations in the generated answer.
 4. Use these insights to iterate and improve your application.
 
-### MDD(metrics-Driven Development)
+#### MDD(metrics-Driven Development)
 
 While creating a fundamental LLM application may be straightforward, the challenge lies in its ongoing maintenance and continuous enhancements. Ragas’s vision is to facilitate the continuous improvement of LLM and RAG applications by embracing the ideology of Metrics-Driven Development(MDD).
 
@@ -41,7 +68,7 @@ MDD is a product development approach that relies on data to make well-informed 
 - Evaluate: This enables you to assess LLM applications and conduct experiments in a metric-assisted manner, ensuring high dependability and reproducibility.
 - Monitoring: It allows you to gain valuable and actionable insights from production data points, facilitating the continuous improvement of the quality of your LLM application.
 
-### Metrics
+#### Metrics
 
 - **Component-Wise Evaluation**
     - **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
@@ -107,42 +134,42 @@ SUPPORTED_ASPECTS = [ harmfulness, maliciousness, coherence, correctness, concis
 
 ![component-wise-metrics.webp](RAG-evaluate/component-wise-metrics.webp)
 
-## Prompt Objects
+### Prompt Objects
 
 - Automatic Prompt Adaption: 根据输入语言自动调整prompt语言
 - Synthetic test data generation: 合成测试数据
 
-## TruLen
+### TruLen
 
-### RAG Traid
+#### RAG Traid
 
 The RAG Traid is made up of 3 evaluations: context relevance, groundtruthness and answer relevance.
 
 ![RAG_Triad.jpg](RAG-evaluate/RAG_Triad.jpg)
 
-#### Context Relevance
+##### Context Relevance
 
 The first step of any RAG application is retrieval; to verify the quality of our retrieval, we want to make sure that each chunk of context is relevant to the input query. This is critical because this context will be used by the LLM to form an answer, so any irrelevant information in the context could be weaved into a hallucination. TruLens enables you to evaluate context relevance by using the structure of the serialized record.
 
-#### Groundtruthness
+##### Groundtruthness
 
 After the context is retrieved, it is then formed into an answer by an LLM. LLMs are often prone to stray from the facts provided, exaggerating or expanding to a correct-sounding answer. To verify the groundedness of our application, we can separate the response into individual claims and independently search for evidence that supports each within the retrieved context.
 
-#### Answer Relevance
+##### Answer Relevance
 
 Last, our response still needs to helpfully answer the original question. We can verify this by evaluating the relevance of the final response to the user input.
 
-#### Put it together
+##### Put it together
 
 By reaching satisfactory evaluations for this triad, we can make a nuanced statement about our application’s correctness; our application is verified to be hallucination free up to the limit of its knowledge base. In other words, if the vector database contains only accurate information, then the answers provided by the RAG are also accurate.
 
 
-## Arize-AI Phoenix
+### Arize-AI Phoenix
 
 Phoenix is an open-source observability library designed for experimentation, evaluation, and troubleshooting. It allows AI Engineers and Data Scientists to quickly visualize their data, evaluate performance, track down issues, and export data to improve.
 
 
-### Tracing and eval
+#### Tracing and eval
 
 ![Untitled](RAG-evaluate/Untitled.png)
 
