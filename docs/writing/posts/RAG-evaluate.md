@@ -70,22 +70,23 @@ MDD is a product development approach that relies on data to make well-informed 
 
 #### Metrics
 ##### Component-Wise Evaluation
-    - **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
-    
-    | Steps | Examples                                                                                                        |
-    | --- |-----------------------------------------------------------------------------------------------------------------|
-    | Step1: Break the generated answer into individual statements. | Statements:Statement 1: “Einstein was born in Germany.”<br>Statement 2: “Einstein was born on 20th March 1879.” |
-    | Step2: For each of the generated statements, verify if it can be inferred from the given context. | Statement 1: Yes<br>Statement 2: No                                                                             |
-    | Step3: Use the formula depicted above to calculate faithfulness. | Faithfulness = 1/2 = 0.5                                                                                        |
 
-   - **[Answer relevancy](https://docs.ragas.io/en/stable/concepts/metrics/answer_relevance.html)**
+- **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
     
-    | Steps | Examples                                                                                                                                                                                                              |
-    | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Step1: Reverse-engineer ‘n’ of the question from the generated answer using a LLM. For instance, for the first answer, the LLM might generate the following possible questions: | Question 1: “In which part of Europe is France located?”<br>Question 2: “What is the geographical location of France within Europe?”<br>Question 3: “Can you identify the region of Europe where France is situated?” |
-    | Step2: Calculate the mean cosine similarity between the generated questions and the actual question. |                                                                                                                                                                                                                       |
+   | Steps | Examples                                                                                                        |
+   | --- |-----------------------------------------------------------------------------------------------------------------|
+   | Step1: Break the generated answer into individual statements. | Statements:Statement 1: “Einstein was born in Germany.”<br>Statement 2: “Einstein was born on 20th March 1879.” |
+   | Step2: For each of the generated statements, verify if it can be inferred from the given context. | Statement 1: Yes<br>Statement 2: No                                                                             |
+   | Step3: Use the formula depicted above to calculate faithfulness. | Faithfulness = 1/2 = 0.5                                                                                        |
+
+  - **[Answer relevancy](https://docs.ragas.io/en/stable/concepts/metrics/answer_relevance.html)**
+    
+   | Steps | Examples                                                                                                                                                                                                              |
+   | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | Step1: Reverse-engineer ‘n’ of the question from the generated answer using a LLM. For instance, for the first answer, the LLM might generate the following possible questions: | Question 1: “In which part of Europe is France located?”<br>Question 2: “What is the geographical location of France within Europe?”<br>Question 3: “Can you identify the region of Europe where France is situated?” |
+   | Step2: Calculate the mean cosine similarity between the generated questions and the actual question. |                                                                                                                                                                                                                       |
   
-   - **[Context recall](https://docs.ragas.io/en/stable/concepts/metrics/context_recall.html)**
+  - **[Context recall](https://docs.ragas.io/en/stable/concepts/metrics/context_recall.html)**
     
   | Steps | Examples                                                                                                               |
   | --- |------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +124,8 @@ context\ entity\ recall-2 = \frac{|CE2\cap GE|}{|GE|} = 1/6=0.1666
 $$
 
 ##### End-to-End Evaluation(You must have ground truth)
-    - **[Answer semantic similarity](https://docs.ragas.io/en/stable/concepts/metrics/semantic_similarity.html)**
+
+- **[Answer semantic similarity](https://docs.ragas.io/en/stable/concepts/metrics/semantic_similarity.html)**
     
     **Step 1:** Vectorize the ground truth answer using the specified embedding model.
     
@@ -131,9 +133,9 @@ $$
     
     **Step 3:** Compute the cosine similarity between the two vectors.
     
-    - **[Answer correctness](https://docs.ragas.io/en/stable/concepts/metrics/answer_correctness.html)**
+- **[Answer correctness](https://docs.ragas.io/en/stable/concepts/metrics/answer_correctness.html)**
     
-    Calculate the the similarity between ground truth and generated answer, and calculate the F1-score.
+  Calculate the the similarity between ground truth and generated answer, and calculate the F1-score.
     
 - Aspect critique
 
