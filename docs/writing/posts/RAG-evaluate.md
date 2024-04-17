@@ -141,6 +141,92 @@ SUPPORTED_ASPECTS = [ harmfulness, maliciousness, coherence, correctness, concis
 
 ![component-wise-metrics.webp](RAG-evaluate/component-wise-metrics.webp)
 
+#### Code
+Load sample dataset
+```python
+# data
+from datasets import load_dataset
+
+amnesty_qa = load_dataset("explodinggradients/amnesty_qa", "english_v2")
+```
+```text
+DatasetDict({
+    baseline: Dataset({
+        features: ['question', 'ground_truth', 'answer', 'contexts'],
+        num_rows: 30
+    })
+})
+```
+Import metrics
+```python
+from ragas.metrics import (
+    context_precision,
+    answer_relevancy,
+    faithfulness,
+    context_recall,
+)
+from ragas.metrics.critique import harmfulness
+
+# list of metrics we're going to use
+metrics = [
+    faithfulness,
+    answer_relevancy,
+    context_recall,
+    context_precision,
+    harmfulness,
+]
+```
+configure Azure model
+```python
+from langchain_openai.chat_models import AzureChatOpenAI
+from langchain_openai.embeddings import AzureOpenAIEmbeddings
+from ragas import evaluate
+
+azure_configs = {
+    "base_url": "https://<your-endpoint>.openai.azure.com/",
+    "model_deployment": "your-deployment-name",
+    "model_name": "your-model-name",
+    "embedding_deployment": "your-deployment-name",
+    "embedding_name": "text-embedding-ada-002",  # most likely
+}
+
+azure_model = AzureChatOpenAI(
+    openai_api_version="2023-05-15",
+    azure_endpoint=azure_configs["base_url"],
+    azure_deployment=azure_configs["model_deployment"],
+    model=azure_configs["model_name"],
+    validate_base_url=False,
+)
+
+# init the embeddings for answer_relevancy, answer_correctness and answer_similarity
+azure_embeddings = AzureOpenAIEmbeddings(
+    openai_api_version="2023-05-15",
+    azure_endpoint=azure_configs["base_url"],
+    azure_deployment=azure_configs["embedding_deployment"],
+    model=azure_configs["embedding_name"],
+)
+```
+evaluate
+```python
+result = evaluate(
+    amnesty_qa["eval"], metrics=metrics, llm=azure_model, embeddings=azure_embeddings
+)
+result
+```
+```text
+{'faithfulness': 0.7083, 'answer_relevancy': 0.9416, 'context_recall': 0.7762, 'context_precision': 0.8000, 'harmfulness': 0.0000}
+```
+
+```python
+df = result.to_pandas()
+df.head()
+```
+
+|question|	ground_truth|	answer	|contexts|	faithfulness|	answer_relevancy|	context_recall	|context_precision|	harmfulness|
+|---|---|---|---|---|---|---|---|---|
+|0	|How to deposit a cheque issued to an associate...	|[Have the check reissued to the proper payee.J...	|\nThe best way to deposit a cheque issued to a...	|[Just have the associate sign the back and the...	|1.0|	0.982491|	0.888889|	1.0|	0|
+|1	|Can I send a money order from USPS as a business?	|[Sure you can. You can fill in whatever you w...	|\nYes, you can send a money order from USPS as...	|[Sure you can. You can fill in whatever you w...	|1.0|	0.995249|	1.000000|	1.0|	0|
+
 #### Prompt Objects
 
 - Automatic Prompt Adaption: 根据输入语言自动调整prompt语言
