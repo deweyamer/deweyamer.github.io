@@ -86,34 +86,32 @@ MDD is a product development approach that relies on data to make well-informed 
     | Step1: Reverse-engineer ‘n’ of the question from the generated answer using a LLM. For instance, for the first answer, the LLM might generate the following possible questions: | Question 1: “In which part of Europe is France located?”<br>Question 2: “What is the geographical location of France within Europe?”<br>Question 3: “Can you identify the region of Europe where France is situated?” |
     | Step2: Calculate the mean cosine similarity between the generated questions and the actual question. |                                                                                                                                                                                                                       |
   
-    - **[Context recall](https://docs.ragas.io/en/stable/concepts/metrics/context_recall.html)**
+   - **[Context recall](https://docs.ragas.io/en/stable/concepts/metrics/context_recall.html)**
     
-    | Steps | Examples                                                                                                               |
-    | --- |------------------------------------------------------------------------------------------------------------------------|
-    | Step1: Break the ground truth answer into individual statements | Statements:<br>Statement 1: “France is in Western Europe.”<br>Statement 2: “Its capital is Paris.”                     |
-    | Step2: For each individual statements, verify if it is can be attributed to the retrieved context. | Statement 1: Yes                                                                                   <br>Statement 2: No |
-    | Step3: Use the formula depicted above to calculate context recall. | context recall = 1/2 = 0.5                                                                                             |
+  | Steps | Examples                                                                                                               |
+  | --- |------------------------------------------------------------------------------------------------------------------------|
+  | Step1: Break the ground truth answer into individual statements | Statements:<br>Statement 1: “France is in Western Europe.”<br>Statement 2: “Its capital is Paris.”                     |
+  | Step2: For each individual statements, verify if it is can be attributed to the retrieved context. | Statement 1: Yes                                                                                   <br>Statement 2: No |
+  | Step3: Use the formula depicted above to calculate context recall. | context recall = 1/2 = 0.5                                                                                             |
   
-    - **[Context precision](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)**
+   - **[Context precision](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)**
     
-    | Steps | Examples                                         |
-    | --- |--------------------------------------------------|
-    | Step1: For each chunk in retrieval context, check if it is relevant or not relevant to arrive at the ground truth for the given question. |                                                  |
-    | Step2: calculate precisionTOP@K for each chunk in the context | precision@1 = 0/1 = 0<br>precision@2 = 1/2 = 0.5 |
-    | Step3: calculate the mean of precisionTOP@K to arrive at the final context precision score. | context precision = (0+0.5)/1 = 0.5              |
+  | Steps | Examples                                         |
+  | --- |--------------------------------------------------|
+  | Step1: For each chunk in retrieval context, check if it is relevant or not relevant to arrive at the ground truth for the given question. |                                                  |
+  | Step2: calculate precisionTOP@K for each chunk in the context | precision@1 = 0/1 = 0<br>precision@2 = 1/2 = 0.5 |
+  | Step3: calculate the mean of precisionTOP@K to arrive at the final context precision score. | context precision = (0+0.5)/1 = 0.5              |
   
-    - **[Context relevancy](https://docs.ragas.io/en/stable/concepts/metrics/context_relevancy.html)**
+   - **[Context relevancy](https://docs.ragas.io/en/stable/concepts/metrics/context_relevancy.html)**
     
-    $$
-    relevant \ score = \frac{relevant \ sentences}{total \ number  \ of sentences \ in \ retrieved context}
-    $$
+  $$ relevant \ score = \frac{relevant \ sentences}{total \ number  \ of sentences \ in \ retrieved context} $$
     
-    - **[Context entity recall](https://docs.ragas.io/en/stable/concepts/metrics/context_entities_recall.html)**
+  - **[Context entity recall](https://docs.ragas.io/en/stable/concepts/metrics/context_entities_recall.html)**
     
-    | Steps | Examples |
-    | --- | --- |
-    |  |  |
-    |  |  |
+  | Steps | Examples |
+  | --- | --- |
+  |  |  |
+  |  |  |
 
 - **End-to-End Evaluation(You must have ground truth)**
     - **[Answer semantic similarity](https://docs.ragas.io/en/stable/concepts/metrics/semantic_similarity.html)**
