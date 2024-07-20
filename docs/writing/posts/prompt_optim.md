@@ -27,6 +27,8 @@ categories:
     - **# Initialization:** 冷启动时的对白, 也是一个强调需注意重点的机会
     - **# Output Format:** 输出内容的格式
 
+<!-- more -->
+
 ```
 ## Profile:
 - author: 刘海

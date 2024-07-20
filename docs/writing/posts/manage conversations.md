@@ -25,6 +25,8 @@ categories:
 | memory | 1. 具备近期完整的chat history | 1. 久远的chat history没有保留 |
 | trunk & retrieval | 1. token消耗少2. 选择最相关的chat history chunk | 1. 不是完整的chat history，存在语义偏差2. 可能错过最近的chat history |
 
+<!-- more -->
+
 ## The strategies to managing chat history
 
 在上面的介绍中提及了两面，为了平衡他们，需要综合应用上面提及的方法。再仔细分析下这两面：

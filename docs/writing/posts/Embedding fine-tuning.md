@@ -19,6 +19,8 @@ Tags: Embedding
 - 对称语义搜索指的是query和语料中的实体存在交叉（句式，单词）。例子：基于当前的问题去搜索相似的问题，比如：如何在线学习Python？它也可以是：如何在网上学习Python？
 - 非对称语义搜索通常是，从一个query检索得到一段较长的语料。例如：什么是Python？你想要的结果是Python的具体定义，比如：Python是可解释的高级编程语言…。对于非对称任务，query和语料通常不存在交叉（句式，单词）。
 
+<!-- more -->
+
 ## Retrieve & Re-rank pipeline
 
 ![InformationRetrieval.png](embedding_ft/InformationRetrieval.png)
