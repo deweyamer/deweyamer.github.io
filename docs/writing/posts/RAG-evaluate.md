@@ -71,6 +71,7 @@ MDD is a product development approach that relies on data to make well-informed 
 
 - **[Faithfulness](https://docs.ragas.io/en/stable/concepts/metrics/faithfulness.html)**
     
+
    | Steps | Examples                                                                                                        |
    | --- |-----------------------------------------------------------------------------------------------------------------|
    | Step1: Break the generated answer into individual statements. | Statements:Statement 1: “Einstein was born in Germany.”<br>Statement 2: “Einstein was born on 20th March 1879.” |
@@ -79,13 +80,15 @@ MDD is a product development approach that relies on data to make well-informed 
 
   - **[Answer relevancy](https://docs.ragas.io/en/stable/concepts/metrics/answer_relevance.html)**
     
+
    | Steps | Examples                                                                                                                                                                                                              |
    | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | Step1: Reverse-engineer ‘n’ of the question from the generated answer using a LLM. For instance, for the first answer, the LLM might generate the following possible questions: | Question 1: “In which part of Europe is France located?”<br>Question 2: “What is the geographical location of France within Europe?”<br>Question 3: “Can you identify the region of Europe where France is situated?” |
    | Step2: Calculate the mean cosine similarity between the generated questions and the actual question. |                                                                                                                                                                                                                       |
   
   - **[Context recall](https://docs.ragas.io/en/stable/concepts/metrics/context_recall.html)**
-    
+   
+ 
   | Steps | Examples                                                                                                               |
   | --- |------------------------------------------------------------------------------------------------------------------------|
   | Step1: Break the ground truth answer into individual statements | Statements:<br>Statement 1: “France is in Western Europe.”<br>Statement 2: “Its capital is Paris.”                     |
@@ -93,6 +96,7 @@ MDD is a product development approach that relies on data to make well-informed 
   | Step3: Use the formula depicted above to calculate context recall. | context recall = 1/2 = 0.5                                                                                             |
   
    - **[Context precision](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)**
+
     
   | Steps | Examples                                         |
   | --- |--------------------------------------------------|
@@ -106,11 +110,13 @@ $$ relevant\ score = \frac{relevant\ sentences}{total\ number\ of\ sentences\ in
 
   - **[Context entity recall](https://docs.ragas.io/en/stable/concepts/metrics/context_entities_recall.html)**
     
+
   | Steps | Examples |
   | --- | --- |
   | Step1: Find entities present in the ground truth. | • Entities in ground truth (GE) - [‘Taj Mahal’, ‘Yamuna’, ‘Agra’, ‘1631’, ‘Shah Jahan’, ‘Mumtaz Mahal’] |
   | Step2: Find entities present in the context. | Entities in context (CE1) - [‘Taj Mahal’, ‘Agra’, ‘Shah Jahan’, ‘Mumtaz Mahal’, ‘India’]<br>Entities in context (CE2) - [‘Taj Mahal’, ‘UNESCO’, ‘India’]|
   | Step3: Use the formula given above to calculate entity-recall  |  |
+
 
 $$
 context\ entity\ recall-1=\frac{|CE1 \cap GE|}{|GE|} = 4/6 = 0.666
