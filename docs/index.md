@@ -1,7 +1,7 @@
 
 ## :smile: What's up?
 
-I write about a mix of personal work, applying llms, and thinking about career.
+I write about a mix of personal work, applying llms, photography, and thinking about career.
 I work in WoltersKluwer, do some GenAI work of llm in law, tax domain.
 
 ## Get in touch
