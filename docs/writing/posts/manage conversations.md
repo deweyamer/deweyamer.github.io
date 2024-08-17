@@ -5,7 +5,7 @@ authors:
   - Dewey
 categories:
   - RAG
-  - conversations
+  - Conversations
 ---
 
 # How to manage chat history for your chatbot?

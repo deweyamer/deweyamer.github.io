@@ -5,7 +5,7 @@ authors:
   - Dewey
 categories:
   - RAG
-  - Embedding Fine tuning
+  - Embedding
 ---
 
 # Embedding fine-tuning

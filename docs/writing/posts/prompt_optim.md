@@ -5,7 +5,6 @@ authors:
   - Dewey
 categories:
   - RAG
-  - prompt
 ---
 
 # Prompt Optim
