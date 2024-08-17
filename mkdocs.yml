@@ -56,9 +56,9 @@ theme:
         name: Switch to system preference
 nav:
   - Home: index.md
-  - Photography: photography.md
   - Blog:
     - writing/index.md
+  - Photography: photography.md
 
 
 plugins:
