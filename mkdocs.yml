@@ -56,8 +56,11 @@ theme:
         name: Switch to system preference
 nav:
   - Home: index.md
-  - Writing: writing/index.md
   - Photography: photography.md
+  - Blog:
+    - writing/index.md
+
+
 plugins:
   - tags # 标签功能插件
   - blog: # 博客功能插件
