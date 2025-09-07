@@ -14,3 +14,5 @@ I will record some idea about technologies and life. I hope you find something v
 ### Embedding
 - [Embedding Fine-tuning](../writing/posts/Embedding%20fine-tuning.md)
 ## Personal Writing
+### Sociology
+- [The order of discourse](../writing/posts/社会学/话语的秩序.md)
