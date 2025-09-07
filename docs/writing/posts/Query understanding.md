@@ -17,6 +17,9 @@ So, I will follow these steps:
 - Retrieval
 - Query understanding
 
+<!-- more -->
+
+
 ## Constructing data indexes
 
 One major limitation is that the query we embed and the text we search for often don't have a direct match, leading to suboptimal results. A common method to improve this is to extract information from a document and use it to answer a question. We can also be creative in how we extract, summarize, and generate potential questions to improve our embeddings.
